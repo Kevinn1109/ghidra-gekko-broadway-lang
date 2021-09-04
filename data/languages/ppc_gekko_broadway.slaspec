@@ -62,7 +62,7 @@ define register offset=0x1000 size=$(REGISTER_SIZE)
 	[ spr000 XER    spr002 spr003 spr004 spr005 spr006 spr007 LR     CTR    spr00a spr00b spr00c spr00d spr00e spr00f 
 	  spr010 spr011 spr012 spr013 spr014 spr015 spr016 spr017 spr018 spr019 SRR0   SRR1   spr01c spr01d spr01e spr01f 
 	  spr020 spr021 spr022 spr023 spr024 spr025 spr026 spr027 spr028 spr029 spr02a spr02b spr02c spr02d spr02e spr02f
-	  spr030 spr031 spr032 spr033 spr034 spr035 spr036 spr037 spr038 spr039 spr03a spr03b spr03c spr03d spr03e spr03f
+	  spr030 spr031 spr032 spr033 spr034 spr035 spr036 spr037 spr038 spr039 CSRR0  CSRR1  spr03c spr03d spr03e spr03f
 	  spr040 spr041 spr042 spr043 spr044 spr045 spr046 spr047 spr048 spr049 spr04a spr04b spr04c spr04d spr04e spr04f
 	  spr050 spr051 spr052 spr053 spr054 spr055 spr056 spr057 spr058 spr059 spr05a spr05b spr05c spr05d spr05e spr05f
 	  spr060 spr061 spr062 spr063 spr064 spr065 spr066 spr067 spr068 spr069 spr06a spr06b spr06c spr06d spr06e spr06f
@@ -684,8 +684,8 @@ attach variables DCRN [
 	dcr017	dcr037	dcr057	dcr077	dcr097	dcr0b7	dcr0d7	dcr0f7	dcr117	dcr137	dcr157	dcr177	dcr197	dcr1b7	dcr1d7	dcr1f7	dcr217	dcr237	dcr257	dcr277	dcr297	dcr2b7	dcr2d7	dcr2f7	dcr317	dcr337	dcr357	dcr377	dcr397	dcr3b7	dcr3d7	dcr3f7
 	dcr018	dcr038	dcr058	dcr078	dcr098	dcr0b8	dcr0d8	dcr0f8	dcr118  dcr138	dcr158	dcr178	dcr198	dcr1b8	dcr1d8	dcr1f8	dcr218	dcr238	dcr258	dcr278	dcr298	dcr2b8	dcr2d8	dcr2f8	dcr318	dcr338	dcr358	dcr378	dcr398	dcr3b8  dcr3d8 	dcr3f8
     dcr019	dcr039	dcr059	dcr079	dcr099	dcr0b9	dcr0d9	dcr0f9	dcr119	dcr139	dcr159	dcr179	dcr199	dcr1b9	dcr1d9	dcr1f9	dcr219	dcr239	dcr259	dcr279	dcr299	dcr2b9	dcr2d9	dcr2f9	dcr319	dcr339	dcr359	dcr379	dcr399	dcr3b9  dcr3d9	dcr3f9
-	dcr01a 	dcr03a	dcr05a	dcr07a	dcr09a	dcr0ba	dcr0da	dcr0fa	dcr11a  dcr13a	dcr15a	dcr17a	dcr19a	dcr1ba	dcr1da	dcr1fa	dcr21a	dcr23a	dcr25a	dcr27a	dcr29a	dcr2ba	dcr2da	dcr2fa	dcr31a	dcr33a	dcr35a	dcr37a	dcr39a	dcr3ba	dcr3da 	dcr3fa
-	dcr01b	dcr03b	dcr05b	dcr07b	dcr09b	dcr0bb	dcr0db	dcr0fb	dcr11b	dcr13b	dcr15b	dcr17b	dcr19b	dcr1bb	dcr1db	dcr1fb	dcr21b	dcr23b	dcr25b	dcr27b	dcr29b	dcr2bb	dcr2db	dcr2fb	dcr31b	dcr33b	dcr35b	dcr37b	dcr39b	dcr3bb	dcr3db 	dcr3fb
+	SRR0 	CSRR0 	spr05a	spr07a	spr09a	spr0ba	spr0da	spr0fa	spr11a  spr13a	spr15a	spr17a	spr19a	spr1ba	spr1da	spr1fa	spr21a	spr23a	spr25a	spr27a	spr29a	spr2ba	spr2da	spr2fa	spr31a	spr33a	spr35a	spr37a	spr39a	spr3ba	spr3da 	spr3fa
+	SRR1	CSRR1 	spr05b	spr07b	spr09b	spr0bb	spr0db	spr0fb	spr11b	spr13b	spr15b	spr17b	spr19b	spr1bb	spr1db	spr1fb	spr21b	spr23b	spr25b	spr27b	spr29b	spr2bb	spr2db	spr2fb	spr31b	spr33b	spr35b	spr37b	spr39b	spr3bb	spr3db 	spr3fb
 	dcr01c	dcr03c	dcr05c	dcr07c	dcr09c	dcr0bc	dcr0dc	dcr0fc	dcr11c  dcr13c	dcr15c	dcr17c	dcr19c	dcr1bc	dcr1dc	dcr1fc	dcr21c	dcr23c	dcr25c	dcr27c	dcr29c	dcr2bc	dcr2dc	dcr2fc	dcr31c	dcr33c	dcr35c	dcr37c	dcr39c	dcr3bc	dcr3dc	dcr3fc
 	dcr01d	dcr03d	dcr05d	dcr07d	dcr09d	dcr0bd	dcr0dd	dcr0fd	dcr11d  dcr13d	dcr15d	dcr17d	dcr19d	dcr1bd	dcr1dd	dcr1fd	dcr21d	dcr23d	dcr25d	dcr27d	dcr29d	dcr2bd	dcr2dd	dcr2fd	dcr31d	dcr33d	dcr35d	dcr37d	dcr39d	dcr3bd	dcr3dd	dcr3fd
 	dcr01e	dcr03e	dcr05e	dcr07e	dcr09e  dcr0be	dcr0de	dcr0fe	dcr11e	dcr13e	dcr15e	dcr17e	dcr19e	dcr1be	dcr1de	dcr1fe	dcr21e	dcr23e	dcr25e	dcr27e	dcr29e	dcr2be	dcr2de	dcr2fe	dcr31e	dcr33e	dcr35e	dcr37e	dcr39e	dcr3be	dcr3de	dcr3fe
