@@ -1217,14 +1217,14 @@
 #          FCFIDx
 #===========================================================
 #fcfid fr0,fr0		0xfc 00 06 9c
-:fcfid fD,fB		is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=846 & Rc=0
+:fcfid fD,fB		is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=846 & Rc=0
 {
 	fD = int2float(fB);
- 	ps0D = float2float(ps0D);
+ 	ps0D = float2float(fD);
 }
 
 #fcfid. fr0,fr0		0xfc 00 06 9d
-:fcfid. fD,fB		is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=846 & Rc=1
+:fcfid. fD,fB		is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=846 & Rc=1
 {
 	fD = int2float(fB);
 	ps0D = float2float(fD);
@@ -1263,7 +1263,7 @@
 }
 
 #fctid fr0,fr0	0xfc 00 06 5c
-:fctid fD,fB	is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=814 & Rc=0
+:fctid fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=814 & Rc=0
 {
 #	fp_fr = floatToIntRoundedUp(fB);
 #	fp_fi = floatToIntInexact(fB);
@@ -1274,7 +1274,7 @@
 	ps0D = float2float(fD);
 }
 #fctid. fr0,fr0	0xfc 00 06 5d
-:fctid. fD,fB	is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=814 & Rc=1
+:fctid. fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=814 & Rc=1
 {
 #	fp_fr = floatToIntRoundedUp(fB);
 #	fp_fi = floatToIntInexact(fB);
@@ -1287,7 +1287,7 @@
 	ps0D = float2float(fD);
 }
 #fctidz fr0,fr0	0xfc 00 06 5e
-:fctidz fD,fB	is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=815 & Rc=0
+:fctidz fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=815 & Rc=0
 {
 	fp_fr = 0;
 #	fp_fi = floatToIntInexact(fB);
@@ -1298,7 +1298,7 @@
 	ps0D = float2float(fD);
 }
 #fctidz. fr0,fr0	0xfc 00 06 5f
-:fctidz. fD,fB	is $(NOTVLE) & OP=63 & fD & BITS_16_20=0 & fB & XOP_1_10=815 & Rc=1
+:fctidz. fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & XOP_1_10=815 & Rc=1
 {
 	fp_fr = 0;
 #	fp_fi = floatToIntInexact(fB);
@@ -1622,14 +1622,14 @@
 }
 
 #fnabs fr0,fr0	0xfc 00 01 10
-:fnabs fD,fB	is $(NOTVLE) & OP=63 & fD & fB & BITS_16_20=0 & XOP_1_10=136 & Rc=0
+:fnabs fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & fB & BITS_16_20=0 & XOP_1_10=136 & Rc=0
 {
 	fD = fB | 0x8000000000000000;
 	ps0D = float2float(fD);
 }
 
 #fnabs. fr0,fr0	0xfc 00 01 11
-:fnabs. fD,fB	is $(NOTVLE) & OP=63 & fD & fB & BITS_16_20=0 & XOP_1_10=136 & Rc=1
+:fnabs. fD,fB	is $(NOTVLE) & OP=63 & fD & ps0D & fB & BITS_16_20=0 & XOP_1_10=136 & Rc=1
 {
 	fD = fB | 0x8000000000000000;
 	ps0D = float2float(fD);
