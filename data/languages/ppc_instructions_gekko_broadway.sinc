@@ -1490,7 +1490,7 @@
 :fmr fD,fB   		is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & ps0B & XOP_1_10=72 & Rc=0
 {
 	ps0D = ps0B;
-	fD = float2float(ps0D);
+	fD = fB;
 	# ps1 is untouched
 }
 
@@ -1498,7 +1498,7 @@
 :fmr. fD,fB   		is $(NOTVLE) & OP=63 & fD & ps0D & BITS_16_20=0 & fB & ps0B & XOP_1_10=72 & Rc=1
 {
 	ps0D = ps0B;
-	fD = float2float(ps0D);
+	fD = fB;
 	# ps1 is untouched
 	cr1flags();
 }
